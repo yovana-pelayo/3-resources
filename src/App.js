@@ -2,19 +2,26 @@ import './App.css';
 import Main from './views/Main.js';
 import React from 'react';
 import Friends from './views/Friends';
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-      <Friends />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route path="/">
+            <Main />
+          </Route>
+          <Friends />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
 // import React, { useEffect, useState } from 'react';
-// import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 // import getFriends from '../../services/Friends/Friends.js';
 
 // export default function Main() {
