@@ -2,18 +2,22 @@ import './App.css';
 import Main from './views/Main.js';
 import React from 'react';
 import Friends from './views/Friends';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
-
+import Header from './Components/Header';
+import './Components/Header.css';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="App">
         <Switch>
           <Route path="/">
             <Main />
           </Route>
-          <Friends />
+          <Route path="/friends">
+            <Friends />
+          </Route>
         </Switch>
       </div>
     </BrowserRouter>

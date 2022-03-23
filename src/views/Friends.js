@@ -4,15 +4,21 @@ import { fetchFriends } from '../services/friends';
 
 export default function Friends() {
   const [friends, setFriends] = useState([]);
+  const [error, setError] = useState('');
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchFriends();
-      setFriends(data);
+      try {
+        const data = await fetchFriends();
+        setFriends(data);
+      } catch (e) {
+        setError(e.message, 'error girl');
+      }
     };
     fetchData();
   }, []);
   return (
     <div>
+      {error && <p>{}</p>}
       {friends.map((friend) => (
         <p key={friend.id}>{friend.name}</p>
       ))}
