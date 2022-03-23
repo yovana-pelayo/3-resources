@@ -18,7 +18,8 @@ export default function Friends() {
   }, []);
   return (
     <div>
-      {error && <p>{}</p>}
+      <h1>Friends</h1>
+      {error && <p>{error}</p>}
       {friends.map((friend) => (
         <p key={friend.id}>{friend.name}</p>
       ))}

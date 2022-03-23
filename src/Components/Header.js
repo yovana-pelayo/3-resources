@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import './Header.css';
 export default function Header() {
   return (
     <div>
@@ -12,7 +12,7 @@ export default function Header() {
         </li>
         <li>
           <NavLink exact to="/friends">
-            Amigos
+            Friends
           </NavLink>
         </li>
       </ul>

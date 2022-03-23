@@ -1,9 +1,11 @@
 import './App.css';
-import Main from './views/Main.js';
+import Main from './views/Main';
 import React from 'react';
 import Friends from './views/Friends';
 import { BrowserRouter } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
 import Header from './Components/Header';
 import './Components/Header.css';
 function App() {
