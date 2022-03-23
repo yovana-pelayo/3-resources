@@ -1,6 +1,14 @@
-import { checkError, client } from '../services/Friends/client';
+import React from 'react';
+import { useEffect, useState } from 'react';
 
-export default async function getFriends() {
-  const resp = await client.from('friends').select('*');
-  return checkError(resp);
+export default function Friends() {
+  const [friends, setFriends] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchFriends();
+      setFriends();
+    };
+    fetchData();
+  }, []);
+  return <div></div>;
 }
