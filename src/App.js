@@ -1,11 +1,13 @@
 import './App.css';
 import Main from './views/Main.js';
 import React from 'react';
+import Friends from './views/Friends';
 
 function App() {
   return (
     <div className="App">
       <Main />
+      <Friends />
     </div>
   );
 }
