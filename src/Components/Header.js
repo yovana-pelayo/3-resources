@@ -15,6 +15,11 @@ export default function Header() {
             Friends
           </NavLink>
         </li>
+        <li>
+          <NavLink exact to="/posts">
+            Posts
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

@@ -2,6 +2,7 @@ import './App.css';
 import Main from './views/Main';
 import React from 'react';
 import Friends from './views/Friends';
+import Posts from './views/Posts';
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
@@ -14,11 +15,14 @@ function App() {
       <Header />
       <div className="App">
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Main />
           </Route>
           <Route path="/friends">
             <Friends />
+          </Route>
+          <Route path="/posts">
+            <Posts />
           </Route>
         </Switch>
       </div>
