@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { fetchFriends } from '../services/friends';
-
+import { useParams } from 'react-router-dom';
 export default function Friends() {
+  const params = useParams();
   const [friends, setFriends] = useState([]);
   const [error, setError] = useState('');
   useEffect(() => {
@@ -15,15 +16,16 @@ export default function Friends() {
       }
     };
     fetchData();
-  }, []);
+  }, [params]);
   return (
     <div>
       <h1>Friends</h1>
       {error && <p>{error}</p>}
       {friends.map((friend) => (
-        <p key={friend.id}>
-          {friend.name} Words to live by: {friend.quote}
-        </p>
+        <ul key={friend.id}>
+          <li>{friend.name}</li>
+          <li>Words to live by: {friend.quote}</li>
+        </ul>
       ))}
     </div>
   );

@@ -17,7 +17,12 @@ export default function Header() {
         </li>
         <li>
           <NavLink exact to="/posts">
-            Posts
+            Notepad
+          </NavLink>
+        </li>
+        <li>
+          <NavLink exact to="/tickets">
+            Tickets
           </NavLink>
         </li>
       </ul>

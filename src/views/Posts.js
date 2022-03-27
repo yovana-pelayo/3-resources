@@ -21,10 +21,11 @@ export default function Posts() {
       <h1>Posts</h1>
       {error && <p>{error}</p>}
       {posts.map((post) => (
-        <p key={post.id}>
-          {post.title}
-          {post.message}- {post.contact}
-        </p>
+        <ul key={post.id}>
+          <li>{post.title}</li>
+          {post.message}
+          <li>{post.contact}</li>
+        </ul>
       ))}
     </div>
   );
