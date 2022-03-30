@@ -1,25 +1,60 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './views/Main';
+import React from 'react';
+import Friends from './views/Friends';
+import Posts from './views/Posts';
+import Tickets from './views/Tickets';
+import { BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
+import Header from './Components/Header';
+import './Components/Header.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/friends">
+            <Friends />
+          </Route>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route path="/tickets">
+            <Tickets />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+// import React, { useEffect, useState } from 'react';
+// import getFriends from '../../services/Friends/Friends.js';
+
+// export default function Main() {
+//   const [friends, setFriends] = useState([]);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const resp = await getFriends();
+//       setFriends(resp);
+//     };
+//     fetchData();
+//   }, []);
+//   return (
+//     <BrowserRouter>
+//       <div className="Main">
+//         {friends.map((friend) => (
+//           <p key={friend.id}>{friend.name}</p>
+//         ))}
+//       </div>
+//     </BrowserRouter>
+//   );
+// }
