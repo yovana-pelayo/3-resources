@@ -24,7 +24,7 @@ export default function Friends() {
       {friends.map((friend) => (
         <ul key={friend.id}>
           <li>{friend.name}</li>
-          <li>Words to live by: {friend.quote}</li>
+          <li>Famous Quotes: {friend.quote}</li>
         </ul>
       ))}
     </div>
